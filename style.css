@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+body, html {
+    margin: 0; padding: 0;
+    width: 100%; height: 100%;
+    overflow: hidden;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: #0f172a;
+}
+.cards-slider {
+    display: flex;
+    width: 300%;
+    height: 100vh;
+    height: 100dvh;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.card {
+    width: 100vw; height: 100%;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    padding: 2rem; text-align: center;
+}
+.card-green { background: linear-gradient(135deg, #10b981, #047857); color: #fff; }
+.card-yellow { background: linear-gradient(135deg, #f59e0b, #b45309); color: #fff; }
+.card-red { background: linear-gradient(135deg, #ef4444, #b91c1c); color: #fff; }
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 2rem; padding: 2.5rem 1.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    width: 100%; max-width: 90%;
+    transform: scale(0.95); transition: transform 0.3s ease;
+}
+.active .glass-card { transform: scale(1); }
+
+.nav-bar {
+    position: fixed; bottom: 1.5rem; left: 50%;
+    transform: translateX(-50%);
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(16px);
+    border-radius: 9999px; padding: 0.5rem 0.75rem;
+    display: flex; gap: 0.5rem; z-index: 50;
+}
+.nav-btn {
+    padding: 0.75rem 1.25rem; border-radius: 9999px;
+    font-weight: 600; color: #94a3b8; background: transparent; border: none;
+}
+.nav-btn.active-green { background-color: #10b981; color: #fff; }
+.nav-btn.active-yellow { background-color: #f59e0b; color: #fff; }
+.nav-btn.active-red { background-color: #ef4444; color: #fff; }
